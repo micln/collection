@@ -1,9 +1,5 @@
 package collection
 
-import (
-	"encoding/json"
-)
-
 type Trait[E any] struct {
 	instance BaseCollection[E]
 }
@@ -47,32 +43,4 @@ func (tr *Trait[E]) RemoveAll(c Collection[E]) {
 
 func (tr *Trait[E]) IsEmpty(e E) bool {
 	return tr.instance.Size() == 0
-}
-
-func (tr *Trait[E]) Marshal() ([]byte, error) {
-	return json.Marshal(tr.instance.ToSlice())
-}
-
-func (tr *Trait[E]) Unmarshal(data []byte) error {
-	var list []E
-	err := json.Unmarshal(data, &list)
-	if err != nil {
-		return err
-	}
-
-	tr.instance.Clear()
-	for _, e := range list {
-		tr.instance.Add(e)
-	}
-
-	return nil
-}
-
-func (tr *Trait[E]) String() string {
-	s, _ := tr.Marshal()
-	return string(s)
-}
-
-func (tr *Trait[E]) GoString() string {
-	return tr.String()
 }
