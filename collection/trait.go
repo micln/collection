@@ -2,8 +2,6 @@ package collection
 
 import (
 	"encoding/json"
-
-	"github.com/micln/collection/iter"
 )
 
 type Trait[E any] struct {
@@ -49,11 +47,6 @@ func (tr *Trait[E]) RemoveAll(c Collection[E]) {
 
 func (tr *Trait[E]) IsEmpty(e E) bool {
 	return tr.instance.Size() == 0
-}
-
-func (tr *Trait[E]) Iterator() iter.Iterator[E] {
-	return iter.SliceIteratorOf(tr.instance.ToSlice())
-	// return iter.NewSliceListIterator(tr.instance.ToSlice())
 }
 
 func (tr *Trait[E]) Marshal() ([]byte, error) {

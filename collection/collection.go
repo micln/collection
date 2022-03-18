@@ -1,7 +1,5 @@
 package collection
 
-import "github.com/micln/collection/iter"
-
 type BaseCollection[E any] interface {
 	Add(E)
 	Contains(E) bool
@@ -13,8 +11,6 @@ type BaseCollection[E any] interface {
 
 type Collection[E any] interface {
 	BaseCollection[E]
-
-	iter.Iterable[E]
 
 	AddMany(...E)
 	AddAll(Collection[E])
