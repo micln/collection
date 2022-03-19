@@ -6,14 +6,15 @@ import (
 
 func ExampleHashSet() {
 	set1 := NewHashSet("e", "c", "b", "b", "c")
-	fmt.Println(toSortedSlice[string](set1)) // [b c e]
+	fmt.Println(ToSortedSlice[string](set1)) // [b c e]
 
-	set1.AddMany("t", "a")
-	fmt.Println(toSortedSlice[string](set1)) // [a b c e t]
+	set1.Add("t")
+	set1.Add("a")
+	fmt.Println(ToSortedSlice[string](set1)) // [a b c e t]
 
 	fmt.Println(set1.Contains("b")) // true
 	set1.Remove("b")
-	fmt.Println(toSortedSlice[string](set1)) // [a c e t]
+	fmt.Println(ToSortedSlice[string](set1)) // [a c e t]
 	fmt.Println(set1.Contains("b"))          // false
 
 	fmt.Println(set1.Size()) // 4

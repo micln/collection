@@ -1,6 +1,6 @@
 package collection
 
-type BaseCollection[E any] interface {
+type Collection[E any] interface {
 	Add(E)
 	Contains(E) bool
 	Remove(E)
@@ -9,8 +9,8 @@ type BaseCollection[E any] interface {
 	ToSlice() []E
 }
 
-type Collection[E any] interface {
-	BaseCollection[E]
+type CollectionX[E any] interface {
+	Collection[E]
 
 	AddMany(...E)
 	AddAll(Collection[E])

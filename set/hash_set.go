@@ -4,8 +4,6 @@ type (
 	some = struct{}
 
 	HashSet[E comparable] struct {
-		Trait[E]
-
 		store map[E]some
 	}
 )
@@ -14,7 +12,6 @@ var _ ComparableSet[int] = (*HashSet[int])(nil)
 
 func NewHashSet[E comparable](elements ...E) (hashSet *HashSet[E]) {
 	hashSet = &HashSet[E]{store: make(map[E]some, len(elements))}
-	hashSet.Trait = TraitWith[E](hashSet)
 
 	for _, e := range elements {
 		hashSet.store[e] = some{}
