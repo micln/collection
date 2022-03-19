@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func Example() {
+func ExampleSimple() {
 	fmt.Println(Max(8, 10))                 // 10
 	fmt.Println(Max("8", "10"))             // 8
 	fmt.Println(IfThen(true, false, true))  // false

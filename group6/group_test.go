@@ -6,7 +6,7 @@ import (
 	"github.com/micln/collection/kvk"
 )
 
-func ExampleMax() {
+func ExampleGroup() {
 	g := map[string][]int{
 		"alex": {84, 82, 83},
 		"bob":  {94, 93, 95},
