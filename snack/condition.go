@@ -1,4 +1,4 @@
-package simple
+package snack
 
 import "golang.org/x/exp/constraints"
 

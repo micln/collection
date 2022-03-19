@@ -41,6 +41,6 @@ func (tr *Trait[E]) RemoveAll(c Collection[E]) {
 	tr.RemoveMany(c.ToSlice()...)
 }
 
-func (tr *Trait[E]) IsEmpty(e E) bool {
+func (tr *Trait[E]) IsEmpty() bool {
 	return tr.instance.Size() == 0
 }

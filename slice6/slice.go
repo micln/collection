@@ -3,8 +3,8 @@ package slice6
 import (
 	"sort"
 
-	"github.com/micln/collection/kvk"
 	"github.com/micln/collection/set"
+	"github.com/micln/collection/snack"
 	"golang.org/x/exp/constraints"
 )
 
@@ -28,7 +28,7 @@ func Avg[E Number](s []E) (avg float64) {
 
 // Distinct remove duplicate elements from the slice.
 func Distinct[E comparable](s []E) []E {
-	return DistinctBy(s, kvk.Self[E])
+	return DistinctBy(s, snack.Self[E])
 }
 
 // DistinctBy return a new slice with all duplicate elements removed.
@@ -112,7 +112,7 @@ func TopNBy[E any](s []E, n int, top func(a, b E) bool) []E {
 
 // Unique remove duplicate elements from the slice.
 func Unique[E comparable](s []E) []E {
-	return UniqueBy(s, kvk.Self[E])
+	return UniqueBy(s, snack.Self[E])
 }
 
 // UniqueBy returns a new slice with all duplicate elements removed.

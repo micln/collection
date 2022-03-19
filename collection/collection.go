@@ -21,5 +21,5 @@ type Collection[E any] interface {
 	RemoveMany(...E)
 	RemoveAll(Collection[E])
 
-	IsEmpty(E) bool
+	IsEmpty() bool
 }

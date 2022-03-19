@@ -1,8 +1,8 @@
 package group6
 
 import (
-	"github.com/micln/collection/kvk"
 	"github.com/micln/collection/slice6"
+	"github.com/micln/collection/snack"
 	"golang.org/x/exp/constraints"
 )
 
@@ -23,7 +23,7 @@ func Avg[K comparable, E Number](g map[K][]E) map[K]float64 {
 func Max[K comparable, E constraints.Ordered](g map[K][]E) map[K]E {
 	g2 := make(map[K]E, len(g))
 	for k, s := range g {
-		g2[k] = slice6.TopBy(s, kvk.Large[E])
+		g2[k] = slice6.TopBy(s, snack.Large[E])
 	}
 	return g2
 }
@@ -32,7 +32,7 @@ func Max[K comparable, E constraints.Ordered](g map[K][]E) map[K]E {
 func Min[K comparable, E constraints.Ordered](g map[K][]E) map[K]E {
 	g2 := make(map[K]E, len(g))
 	for k, s := range g {
-		g2[k] = slice6.TopBy(s, kvk.Less[E])
+		g2[k] = slice6.TopBy(s, snack.Less[E])
 	}
 	return g2
 }
